@@ -9,6 +9,7 @@
     <% astronaut.missions.alphabetical.each do |mission| %>
     - <%= mission.title %>
     <% end %>
+    <p>Total Time in Space: <%= astronaut.missions.total_time_in_space %> days</p>
   </div>
 <% end %>
 
