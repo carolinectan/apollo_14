@@ -55,7 +55,7 @@ RSpec.describe 'astronaut index page' do
 
   it 'can display the total time in space for each astronaut' do
     visit '/astronauts'
-save_and_open_page
+
     within "#astronaut-#{@astronaut1.id}" do
       expect(page).to have_content('Total Time in Space: 515 days')
     end
