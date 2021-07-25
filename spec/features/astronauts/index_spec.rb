@@ -7,9 +7,15 @@ RSpec.describe 'astronaut index page' do
     @mission1 = Mission.create!(title: 'Moon', time_in_space: 150)
     @mission2 = Mission.create!(title: 'Mars', time_in_space: 365)
 
-    @astronaut_mission1 = AstronautMission.create!(astronaut: @astronaut1, mission: @mission1)
-    @astronaut_mission2 = AstronautMission.create!(astronaut: @astronaut2, mission: @mission1)
-    @astronaut_mission3 = AstronautMission.create!(astronaut: @astronaut1, mission: @mission2)
+    # @astronaut_mission1 = AstronautMission.create!(astronaut: @astronaut1, mission: @mission1)
+    # @astronaut_mission2 = AstronautMission.create!(astronaut: @astronaut2, mission: @mission1)
+    # @astronaut_mission3 = AstronautMission.create!(astronaut: @astronaut1, mission: @mission2)
+
+    # using a shovel to create associations
+    @astronaut_mission1 = @mission1.astronauts << @astronaut1
+    @astronaut_mission2 = @mission1.astronauts << @astronaut2
+
+    @astronaut_mission3 = @mission2.astronauts << @astronaut1
   end
 
   it 'can list all astronauts and their attributes' do
