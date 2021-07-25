@@ -6,7 +6,7 @@
     <p><%=astronaut.age %></p>
     <p><%=astronaut.job %></p>
     <p>Missions:</p>
-    <% astronaut.missions.each do |mission| %>
+    <% astronaut.missions.alphabetical.each do |mission| %>
     - <%= mission.title %>
     <% end %>
   </div>

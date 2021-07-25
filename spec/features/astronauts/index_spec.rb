@@ -43,6 +43,8 @@ RSpec.describe 'astronaut index page' do
     within "#astronaut-#{@astronaut1.id}" do
       expect(page).to have_content(@mission1.title)
       expect(page).to have_content(@mission2.title)
+
+      expect('Mars').to appear_before('Moon')
     end
 
     within "#astronaut-#{@astronaut2.id}" do
